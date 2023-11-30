@@ -24,11 +24,11 @@ if [ -f "./student-submission/ListExamples.java" ];
                 echo "Correct"
                 CORRECT_TESTS+=1
             else
-                grep
+                echo "Test case failed"
+                FAILED_TESTS+=1
             fi
             TOTAL_TESTS=$((CORRECT_TESTS+FAILED_TESTS))
-            GRADE=$(echo "scale=2; $CORRECT_TESTS/$TOTAL_TESTS" | bc) 
-            # This will give you a decimal grade. The scale=2 sets the number of decimal places to 2.
+            GRADE=$(echo "scale=2; $CORRECT_TESTS/$TOTAL_TESTS" | bc)
             echo "Your grade is $GRADE"
         fi
 
